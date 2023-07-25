@@ -1,8 +1,10 @@
 export default defineNuxtConfig({
   ssr: true,
   pages: true,
-  router: {
-    base: "/va-project/",
+  runtimeConfig: {
+    public: {
+      baseURL: "/va-project/",
+    },
   },
   experimental: {
     payloadExtraction: false,
