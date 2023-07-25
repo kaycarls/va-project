@@ -18,7 +18,4 @@ export default defineNuxtConfig({
       useVuetifyLabs: true,
     },
   },
-  router: {
-    base: "/va-project/",
-  },
 });
