@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   router: {
     base: "/va-project/",
   },
+  experimental: {
+    payloadExtraction: false,
+  },
   modules: ["@invictus.codes/nuxt-vuetify"],
   vuetify: {
     moduleOptions: {
