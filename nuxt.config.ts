@@ -20,6 +20,6 @@ export default defineNuxtConfig({
     },
   },
   router: {
-    base: "/repository/", // Set your repository name as the base path
+    base: "/va-project/",
   },
 });
