@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  ssr: true,
   pages: true,
   modules: ["@invictus.codes/nuxt-vuetify"],
   vuetify: {

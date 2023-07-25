@@ -1,53 +1,51 @@
 <template>
-  <ClientOnly>
-    <v-container fluid class="h-screen bg-black text-center">
-      <v-row>
-        <v-col cols="12" class="text-center pt-10">
-          <h1>Hello World</h1>
-          <v-btn class="ma-2 text-none" color="error" @click="handleRecording">
-            {{ recBtn }}
-            <v-icon
-              v-if="!isRecording"
-              end
-              icon="mdi mdi-record-circle-outline"
-            ></v-icon>
-          </v-btn>
-        </v-col>
-        <v-col cols="12" class="text-center pt-10">
-          <div class="d-flex justify-center">
-            <v-textarea
-              v-model="transcript"
-              variant="outlined"
-              clearable
-              auto-grow
-              class="textarea pa-5"
-            ></v-textarea>
-          </div>
-          <v-btn class="text-none mx-5" color="blue" @click="handleSearch">
-            Search Google
-            <v-icon end icon="mdi mdi-google"></v-icon>
-          </v-btn>
-          <v-btn
-            class="text-none mx-5"
-            color="success"
+  <v-container fluid class="h-screen bg-black text-center">
+    <v-row>
+      <v-col cols="12" class="text-center pt-10">
+        <h1>Hello World</h1>
+        <v-btn class="ma-2 text-none" color="error" @click="handleRecording">
+          {{ recBtn }}
+          <v-icon
+            v-if="!isRecording"
+            end
+            icon="mdi mdi-record-circle-outline"
+          ></v-icon>
+        </v-btn>
+      </v-col>
+      <v-col cols="12" class="text-center pt-10">
+        <div class="d-flex justify-center">
+          <v-textarea
+            v-model="transcript"
             variant="outlined"
-            @click="handleCopy"
-          >
-            Copy Text
-            <v-icon end icon="mdi mdi-content-copy"></v-icon>
-          </v-btn>
-          <v-snackbar
-            v-model="snackbar"
-            class="ma-10"
-            variant="tonal"
-            :color="snackbarColor"
-          >
-            <p class="text-center">{{ snackbarText }}</p>
-          </v-snackbar>
-        </v-col>
-      </v-row>
-    </v-container>
-  </ClientOnly>
+            clearable
+            auto-grow
+            class="textarea pa-5"
+          ></v-textarea>
+        </div>
+        <v-btn class="text-none mx-5" color="blue" @click="handleSearch">
+          Search Google
+          <v-icon end icon="mdi mdi-google"></v-icon>
+        </v-btn>
+        <v-btn
+          class="text-none mx-5"
+          color="success"
+          variant="outlined"
+          @click="handleCopy"
+        >
+          Copy Text
+          <v-icon end icon="mdi mdi-content-copy"></v-icon>
+        </v-btn>
+        <v-snackbar
+          v-model="snackbar"
+          class="ma-10"
+          variant="tonal"
+          :color="snackbarColor"
+        >
+          <p class="text-center">{{ snackbarText }}</p>
+        </v-snackbar>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script setup>
@@ -89,8 +87,10 @@ const initSpeechRecognition = () => {
       transcript.value = script;
     };
   } else {
-    // eslint-disable-next-line no-console
-    console.warn("Speech Recognition is not available in this browser.");
+    snackbarText.value =
+      "Speech Recognition is not available in this browser. Please use a different browser.";
+    snackbarColor.value = "error";
+    snackbar.value = true;
   }
 };
 
