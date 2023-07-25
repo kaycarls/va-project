@@ -2,8 +2,7 @@ export default defineNuxtConfig({
   ssr: true,
   pages: true,
   router: {
-    // eslint-disable-next-line prettier/prettier
-    base: '/va-project/',
+    base: "/va-project/",
   },
   modules: ["@invictus.codes/nuxt-vuetify"],
   vuetify: {
