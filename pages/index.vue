@@ -8,35 +8,106 @@
           <v-icon
             v-if="!isRecording"
             end
-            icon="mdi-checkbox-marked-circle"
+            icon="mdi mdi-record-circle-outline"
           ></v-icon>
         </v-btn>
       </v-col>
-      <v-col cols="12" class="text-center d-flex justify-center pt-10">
-        <v-textarea
-          label="Label"
+      <v-col cols="12" class="text-center pt-10">
+        <div class="d-flex justify-center">
+          <v-textarea
+            v-model="transcript"
+            variant="outlined"
+            clearable
+            auto-grow
+            class="textarea pa-5"
+          ></v-textarea>
+        </div>
+        <v-btn class="text-none mx-5" color="blue" @click="handleSearch">
+          Search Google
+          <v-icon end icon="mdi mdi-google"></v-icon>
+        </v-btn>
+        <v-btn
+          class="text-none mx-5"
+          color="success"
           variant="outlined"
-          clearable
-          auto-grow
-          class="textarea pa-5"
-        ></v-textarea>
+          @click="handleCopy"
+        >
+          Copy Text
+          <v-icon end icon="mdi mdi-content-copy"></v-icon>
+        </v-btn>
+        <v-snackbar
+          v-model="snackbar"
+          class="ma-10"
+          variant="tonal"
+          :color="snackbarColor"
+        >
+          <p class="text-center">{{ snackbarText }}</p>
+        </v-snackbar>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script setup>
+const transcript = ref("Press Record To Start");
 const isRecording = ref(false);
 const recBtn = ref("Record");
+const snackbar = ref(false);
+const snackbarText = ref("");
+const snackbarColor = ref("");
+let speech;
 
-const handleRecording = () => {
-  if (isRecording.value === false) {
+onMounted(() => {
+  const Recognition =
+    window.SpeechRecognition || window.webkitSpeechRecognition;
+  speech = new Recognition();
+  speech.continuous = true;
+  speech.interimResults = true;
+  speech.onstart = () => {
+    snackbarText.value = "Recording Started";
+    snackbarColor.value = "success";
+    snackbar.value = true;
     isRecording.value = true;
-    recBtn.value = "Recording...";
-  } else {
+    recBtn.value = "Stop";
+  };
+  speech.onend = () => {
+    snackbarText.value = "Recording Stopped";
+    snackbarColor.value = "error";
+    snackbar.value = true;
     isRecording.value = false;
     recBtn.value = "Record";
+  };
+
+  speech.onresult = (evt) => {
+    const script = Array.from(evt.results)
+      .map((result) => result[0])
+      .map((result) => result.transcript)
+      .join(" ");
+    transcript.value = script;
+  };
+});
+
+const handleRecording = () => {
+  if (speech) {
+    if (isRecording.value === false) {
+      speech.start();
+    } else {
+      speech.stop();
+    }
   }
+};
+
+const handleSearch = () => {
+  const searchQuery = encodeURIComponent(transcript.value);
+  const searchUrl = `https://www.google.com/search?q=${searchQuery}`;
+  window.open(searchUrl, "_blank");
+};
+
+const handleCopy = () => {
+  navigator.clipboard.writeText(transcript.value);
+  snackbarText.value = "Text copied to clipboard!";
+  snackbarColor.value = "blue";
+  snackbar.value = true;
 };
 </script>
 
