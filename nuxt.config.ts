@@ -19,4 +19,7 @@ export default defineNuxtConfig({
       useVuetifyLabs: true,
     },
   },
+  router: {
+    base: "/repository/", // Set your repository name as the base path
+  },
 });
