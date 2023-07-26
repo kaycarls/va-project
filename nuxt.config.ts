@@ -2,10 +2,12 @@ export default defineNuxtConfig({
   ssr: true,
   pages: true,
   runtimeConfig: {
-    public: {},
+    public: {
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
+    },
     static: {},
     app: {
-      baseURL: "/va-project/",
+      baseURL: process.env.NUXT_APP_BASE_URL,
     },
   },
   modules: ["@invictus.codes/nuxt-vuetify"],
