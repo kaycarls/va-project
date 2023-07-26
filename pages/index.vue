@@ -1,6 +1,13 @@
 <template>
   <div>
-    <v-parallax height="100vh" src="~/assets/bg1.jpg" class="bg1">
+    <v-parallax
+      height="100vh"
+      src="~/assets/bg1.jpg"
+      alt="Background Image"
+      class="bg1"
+    >
+      <img src="~/assets/bg1.jpg" alt="Background Image" height="300" />
+      <img src="~/assets/bg2.jpg" alt="Background Image" height="300" />
       <img src="~/assets/bg3.jpg" alt="Background Image" height="300" />
       <v-row class="d-flex align-center fill-height text-white pa-15">
         <v-col cols="12" md="6">
