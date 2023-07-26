@@ -20,7 +20,7 @@
         <v-col cols="12" md="6" class="text-center fade-in">
           <v-btn
             class="glow-on-hover"
-            prepend-icon="$vuetify"
+            prepend-icon="mdi mdi-play"
             stacked
             variant="outlined"
             color="#01b5dc"
@@ -97,7 +97,7 @@ setTimeout(() => {
 
 const speakIntro = () => {
   const introText =
-    "Hai, I'm Ariana. Your Personal Assistant for Seamless Efficiency. Enough chit-chat, let me show u what i can do. Please click here to proceed";
+    "Hai, I'm Ariana. Your Personal Assistant for Seamless Efficiency. Allow me to guide u through this process. Please click here to proceed";
   const synth = window.speechSynthesis;
 
   if (synth.speaking) {
