@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   pages: true,
   runtimeConfig: {
     public: {
-      baseURL: process.env.NUXT_APP_BASE_URL,
+      baseURL: process.env.NUXT_APP_BASE_URL || "/",
     },
   },
   experimental: {
