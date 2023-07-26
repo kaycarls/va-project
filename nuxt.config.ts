@@ -2,6 +2,8 @@ export default defineNuxtConfig({
   ssr: true,
   pages: true,
   runtimeConfig: {
+    public: {},
+    static: {},
     app: {
       baseURL: "/va-project/",
     },
