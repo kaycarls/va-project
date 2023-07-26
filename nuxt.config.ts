@@ -1,10 +1,9 @@
-/* eslint-disable prettier/prettier */
 export default defineNuxtConfig({
   ssr: true,
   pages: true,
   runtimeConfig: {
     public: {
-      baseURL: useRuntimeConfig().app.baseURL || "/",
+      baseURL: process.env.NUXT_APP_BASE_URL,
     },
   },
   experimental: {
