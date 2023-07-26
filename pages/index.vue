@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-parallax height="100vh" src="/img/bg1.jpg" class="bg1">
+    <v-parallax height="100vh" src="~/assets/bg1.jpg" class="bg1">
       <img src="~/assets/bg3.jpg" alt="Background Image" height="300" />
       <v-row class="d-flex align-center fill-height text-white pa-15">
         <v-col cols="12" md="6">
@@ -32,7 +32,7 @@
         </v-col>
       </v-row>
     </v-parallax>
-    <v-parallax height="100vh" src="/img/bg2.jpg" class="bg-white">
+    <v-parallax height="100vh" src="~/assets/bg2.jpg" class="bg-white">
       <v-row class="d-flex align-center fill-height">
         <v-col cols="12" class="text-center pt-10">
           <h1>Hello World</h1>
