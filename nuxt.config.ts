@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 export default defineNuxtConfig({
   ssr: true,
   pages: true,
