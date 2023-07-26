@@ -1,9 +1,9 @@
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
   pages: true,
   runtimeConfig: {
-    public: {
-      baseURL: "/va-project/",
+    app: {
+      baseURL: process.env.NUXT_APP_BASE_URL,
     },
   },
   experimental: {
