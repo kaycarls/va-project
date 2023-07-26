@@ -6,9 +6,6 @@ export default defineNuxtConfig({
       baseURL: "/va-project/",
     },
   },
-  experimental: {
-    payloadExtraction: false,
-  },
   modules: ["@invictus.codes/nuxt-vuetify"],
   vuetify: {
     moduleOptions: {
