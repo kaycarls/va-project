@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-parallax height="100vh" src="/img/bg1.jpg" class="bg1">
+      <img src="~/assets/bg3.jpg" alt="Background Image" height="300" />
       <v-row class="d-flex align-center fill-height text-white pa-15">
         <v-col cols="12" md="6">
           <h1 class="text-h5 text-sm-h3 text-no-wrap fade-in">
