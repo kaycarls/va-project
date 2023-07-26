@@ -19,7 +19,7 @@ jobs:
 
       # Pick your own package manager and build script
       - run: npm install
-      - run: NUXT_APP_BASE_URL=/va-project/ NUXT_PUBLIC_SITE_URL = "https://kaycarls.github.io/va-project/" npm run build
+      - run: NUXT_APP_BASE_URL=/va-project/ NUXT_PUBLIC_SITE_URL="https://kaycarls.github.io/va-project/" npm run build
         env:
           NITRO_PRESET: github-pages
 
