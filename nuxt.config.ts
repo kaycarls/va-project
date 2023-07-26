@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   pages: true,
   runtimeConfig: {
     public: {
-      NUXT_APP_BASE_URL: "/va-project/",
+      baseURL: "/va-project/",
     },
   },
   experimental: {
