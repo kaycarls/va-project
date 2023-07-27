@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="bg-black fade-in">
     <NavBar />
     <HeroPage />
     <v-parallax
@@ -24,7 +24,7 @@
             elevate your efficiency to new heights.
           </h2>
         </v-col>
-        <v-col cols="12" md="6" class="text-center fade-in">
+        <v-col cols="12" md="6" class="text-center">
           <v-btn
             class="glow-on-hover"
             prepend-icon="mdi mdi-play"
@@ -98,12 +98,15 @@ const recBtn = ref("Record");
 const snackbar = ref(false);
 const snackbarText = ref("");
 const snackbarColor = ref("");
+let fadeElements;
 let speech;
 
-setTimeout(() => {
-  const fadeElements = document.querySelectorAll(".fade-in");
-  fadeElements.forEach((element) => element.classList.add("show"));
-}, 200);
+onMounted(() => {
+  setTimeout(() => {
+    fadeElements = document.querySelectorAll(".fade-in");
+    fadeElements.forEach((element) => element.classList.add("show"));
+  }, 200);
+});
 
 const speakIntro = () => {
   const introText =
@@ -212,7 +215,7 @@ const handleCopy = () => {
 }
 .fade-in {
   opacity: 0;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 .fade-in.show {

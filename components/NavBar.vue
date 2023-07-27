@@ -1,6 +1,6 @@
 <template>
   <v-container class="bg-black">
-    <v-app-bar app color="black" dark>
+    <v-app-bar class="pa-2" app color="black" dark>
       <v-app-bar-nav-icon> </v-app-bar-nav-icon>
       <v-app-bar-title>Neo.AI</v-app-bar-title>
       <div class="links">
@@ -49,4 +49,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.custom-app-bar {
+  height: 100px; /* Set your desired height here */
+}
+</style>
