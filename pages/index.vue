@@ -1,13 +1,14 @@
 <template>
   <v-app>
     <NavBar />
+    <HeroPage />
     <v-parallax
       height="100vh"
       src="https://cdn.dribbble.com/users/1373613/screenshots/5385718/media/53dcc789f5aa17d54d3912f7c2716ccd.gif"
       alt="Background Image"
-      class="bg1"
+      class="bg-black"
     >
-      <v-row class="d-flex align-center fill-height text-white pa-15">
+      <v-row class="d-flex align-center fill-height pa-15">
         <v-col cols="12" md="6">
           <h1 class="text-h5 text-sm-h3 text-no-wrap fade-in">
             Introducing Ariana: <br />
@@ -89,6 +90,7 @@
 
 <script setup>
 import NavBar from "~/components/NavBar.vue";
+import HeroPage from "~/components/HeroPage.vue";
 
 const transcript = ref("Press Record To Start");
 const isRecording = ref(false);
@@ -184,7 +186,7 @@ const handleCopy = () => {
 };
 </script>
 
-<style scoped>
+<style>
 .glow-on-hover {
   transition: box-shadow 0.3s ease;
 }

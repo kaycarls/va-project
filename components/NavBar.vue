@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="bg-black">
     <v-app-bar app color="black" dark>
       <v-app-bar-nav-icon> </v-app-bar-nav-icon>
       <v-app-bar-title>Neo.AI</v-app-bar-title>

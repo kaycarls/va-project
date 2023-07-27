@@ -1,6 +1,10 @@
 export default defineNuxtConfig({
-  head: {
-    link: [{ rel: "icon", type: "image/x-icon", href: "~/assets/favicon.ico" }],
+  app: {
+    head: {
+      link: [
+        { rel: "icon", type: "image/x-icon", href: "~/assets/favicon.ico" },
+      ],
+    },
   },
   ssr: true,
   pages: true,
