@@ -2,13 +2,19 @@
   <div>
     <v-container fluid class="h-screen video-container">
       <v-row>
-        <v-col class="h-screen d-flex align-center justify-center pa-15">
+        <v-col
+          cols="12"
+          class="h-screen d-flex align-center justify-center pa-15"
+        >
           <div class="text-front text-white text-center">
-            <h1 class="text-h1 pa-10">Neo.AI</h1>
-            <h2 class="text-h2 text-justify">
+            <h1 class="text-h2 text-sm-h1 text-shadow pa-10">Neo.AI</h1>
+            <h2 class="text-h5 text-sm-h2 text-shadow text-center text-sm-left">
               Unleashing Next-Gen Potential <br />
               To Empower Humanity.
             </h2>
+            <div class="text-front text-white text-center mt-15">
+              <v-btn class="text-shadow" variant="outlined"> Learn More </v-btn>
+            </div>
           </div>
           <video autoplay loop muted class="video-background">
             <source src="~/assets/office.mp4" type="video/mp4" />

@@ -10,13 +10,13 @@
     >
       <v-row class="d-flex align-center fill-height pa-15">
         <v-col cols="12" md="6">
-          <h1 class="text-h5 text-sm-h3 text-no-wrap fade-in">
+          <h1 class="text-h5 text-sm-h3 text-shadow text-no-wrap fade-in">
             Introducing Ariana: <br />
             Your Personal Assistant <br />
             for Seamless Efficiency!
           </h1>
           <h2
-            class="text-subtitle-2 text-sm-h6 subheading mt-10 text-justify fade-in"
+            class="text-subtitle-2 text-sm-h6 text-shadow subheading mt-10 text-justify fade-in"
           >
             Unlock the power of cutting-edge technology with Ariana, your new
             personal assistant! Seamlessly bridging the gap between your tasks
@@ -190,6 +190,9 @@ const handleCopy = () => {
 </script>
 
 <style>
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
 .glow-on-hover {
   transition: box-shadow 0.3s ease;
 }
