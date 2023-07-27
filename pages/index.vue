@@ -1,14 +1,12 @@
 <template>
-  <div>
+  <v-app>
+    <NavBar />
     <v-parallax
       height="100vh"
-      src="~/assets/bg1.jpg"
+      src="https://cdn.dribbble.com/users/1373613/screenshots/5385718/media/53dcc789f5aa17d54d3912f7c2716ccd.gif"
       alt="Background Image"
       class="bg1"
     >
-      <img src="~/assets/bg1.jpg" alt="Background Image" height="300" />
-      <img src="~/assets/bg2.jpg" alt="Background Image" height="300" />
-      <img src="~/assets/bg3.jpg" alt="Background Image" height="300" />
       <v-row class="d-flex align-center fill-height text-white pa-15">
         <v-col cols="12" md="6">
           <h1 class="text-h5 text-sm-h3 text-no-wrap fade-in">
@@ -17,7 +15,7 @@
             for Seamless Efficiency!
           </h1>
           <h2
-            class="text-subtitle-2 text-sm-h6 subheading mt-10 text-justify bg-black fade-in"
+            class="text-subtitle-2 text-sm-h6 subheading mt-10 text-justify fade-in"
           >
             Unlock the power of cutting-edge technology with Ariana, your new
             personal assistant! Seamlessly bridging the gap between your tasks
@@ -39,7 +37,7 @@
         </v-col>
       </v-row>
     </v-parallax>
-    <v-parallax height="100vh" src="~/assets/bg2.jpg" class="bg-white">
+    <v-parallax height="100vh" src="" class="bg-black">
       <v-row class="d-flex align-center fill-height">
         <v-col cols="12" class="text-center pt-10">
           <h1>Hello World</h1>
@@ -86,10 +84,12 @@
         </v-col>
       </v-row>
     </v-parallax>
-  </div>
+  </v-app>
 </template>
 
 <script setup>
+import NavBar from "~/components/NavBar.vue";
+
 const transcript = ref("Press Record To Start");
 const isRecording = ref(false);
 const recBtn = ref("Record");
