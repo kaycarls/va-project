@@ -2,8 +2,14 @@
   <div>
     <v-container fluid class="h-screen video-container">
       <v-row>
-        <v-col class="h-screen d-flex align-center justify-center">
-          <h1 class="text-h1 text-front text-white text-center">Hello World</h1>
+        <v-col class="h-screen d-flex align-center justify-center pa-15">
+          <div class="text-front text-white text-center">
+            <h1 class="text-h1 pa-10">Neo.AI</h1>
+            <h2 class="text-h2 text-justify">
+              Unleashing Next-Gen Potential <br />
+              To Empower Humanity.
+            </h2>
+          </div>
           <video autoplay loop muted class="video-background">
             <source src="~/assets/office.mp4" type="video/mp4" />
             Your browser does not support the video tag.
