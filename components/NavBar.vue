@@ -7,8 +7,8 @@
         <a
           v-for="(items, i) in links"
           :key="i"
-          class="text-white mx-5 text-decoration-none"
-          :href="items.url"
+          class="text-white mx-5 text-decoration-none link-hover"
+          @click="scrollToSection(items.url)"
         >
           <span class="white underline_left"></span>
           {{ items.title }}
@@ -19,38 +19,43 @@
   </v-container>
 </template>
 
-<script>
-export default {
-  name: "NavBar",
-  data: () => ({
-    links: [
-      {
-        url: "#",
-        icon: "mdi mdi-home",
-        title: "Home",
-      },
-      {
-        url: "#",
-        icon: "ri-user-line",
-        title: "Research",
-      },
-      {
-        url: "#",
-        icon: "ri-service-line",
-        title: "Product",
-      },
-      {
-        url: "#",
-        icon: "ri-contacts-line",
-        title: "Company",
-      },
-    ],
-  }),
-};
+<script setup>
+const links = [
+  {
+    url: "#id-home",
+    title: "Home",
+  },
+  {
+    url: "#id-research",
+    title: "Research",
+  },
+  {
+    url: "#id-product",
+    title: "Product",
+  },
+  {
+    url: "#id-about",
+    title: "Company",
+  },
+  {
+    url: "#id-careers",
+    title: "Careers",
+  },
+];
+function scrollToSection(id) {
+  const section = document.querySelector(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+}
 </script>
 
-<style scoped>
+<style>
 .custom-app-bar {
-  height: 100px; /* Set your desired height here */
+  height: 100px;
+}
+.link-hover:hover {
+  cursor: pointer;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1);
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container fluid class="h-screen video-container">
+    <v-container id="id-home" fluid class="h-screen video-container">
       <v-row>
         <v-col
           cols="12"
@@ -13,7 +13,13 @@
               To Empower Humanity.
             </h2>
             <div class="text-front text-white text-center mt-15">
-              <v-btn class="text-shadow" variant="outlined"> Learn More </v-btn>
+              <v-btn
+                class="text-shadow"
+                variant="outlined"
+                @click="scrollToSection('#id-research')"
+              >
+                Learn More
+              </v-btn>
             </div>
           </div>
           <video autoplay loop muted class="video-background">
@@ -26,7 +32,14 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+function scrollToSection(id) {
+  const section = document.querySelector(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+}
+</script>
 
 <style>
 .text-front {
