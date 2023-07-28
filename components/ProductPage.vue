@@ -1,101 +1,98 @@
 <template>
-  <v-parallax
-    id="id-product"
-    height="100vh"
-    src="https://cdn.dribbble.com/users/1373613/screenshots/5385718/media/53dcc789f5aa17d54d3912f7c2716ccd.gif"
-    alt="Background Image"
-    class="bg-black"
-  >
-    <v-row class="d-flex align-center fill-height pa-15">
-      <v-col cols="12" md="6">
-        <h1 class="text-h5 text-sm-h3 text-shadow text-no-wrap">
-          Introducing Ariana: <br />
-          Your Personal Assistant <br />
-          for Seamless Efficiency!
-        </h1>
-        <h2
-          class="text-subtitle-2 text-sm-h6 text-shadow subheading mt-10 text-justify"
-        >
-          Unlock the power of cutting-edge technology with Ariana, your new
-          personal assistant! Seamlessly bridging the gap between your tasks and
-          productivity, Ariana is ready to transform the way you work and
-          elevate your efficiency to new heights.
-        </h2>
-      </v-col>
-      <v-col cols="12" md="6" class="text-center">
-        <v-btn
-          class="glow-on-hover"
-          prepend-icon="mdi mdi-play"
-          stacked
-          variant="outlined"
-          color="#01b5dc"
-          size="x-large"
-          @click="speakIntro"
-          >Speak Intro</v-btn
-        >
-      </v-col>
-    </v-row>
-  </v-parallax>
-  <v-parallax height="100vh" src="" class="bg-black">
-    <v-row class="d-flex align-center pt-15">
-      <v-col cols="12" class="text-center pt-15">
-        <v-btn class="ma-2 text-none" color="error" @click="handleRecording">
-          {{ recBtn }}
-          <v-icon
-            v-if="!isRecording"
-            end
-            icon="mdi mdi-record-circle-outline"
-          ></v-icon>
-        </v-btn>
-      </v-col>
-      <v-col cols="12" class="text-center">
-        <div class="d-flex justify-center mt-15">
-          <v-textarea
-            v-model="transcript"
+  <v-container id="id-product" fluid="h-screen">
+    <v-parallax
+      height="100%"
+      src="https://cdn.dribbble.com/users/1373613/screenshots/5385718/media/53dcc789f5aa17d54d3912f7c2716ccd.gif"
+      alt="Background Image"
+      class="bg-black d-flex align-center px-15"
+    >
+      <v-row class="mt-15">
+        <v-col cols="12" md="6" class="mt-15">
+          <h1 class="text-h5 text-sm-h3 text-shadow text-no-wrap">
+            Introducing Ariana: <br />
+            Your Personal Assistant <br />
+            for Seamless Efficiency!
+          </h1>
+          <h2
+            class="text-subtitle-2 text-sm-h6 text-shadow subheading mt-10 text-justify"
+          >
+            Unlock the power of cutting-edge technology with Ariana, your new
+            personal assistant! Seamlessly bridging the gap between your tasks
+            and productivity, Ariana is ready to transform the way you work and
+            elevate your efficiency to new heights.
+          </h2>
+        </v-col>
+        <v-col cols="12" md="6" class="mt-15 text-center">
+          <v-btn
+            class="glow-on-hover mx-5"
+            prepend-icon="mdi mdi-play"
+            stacked
             variant="outlined"
-            clearable
-            auto-grow
-            class="textarea mx-5"
-          ></v-textarea>
-        </div>
-        <v-btn class="text-none mx-5" color="blue" @click="handleSearch">
-          Search Google
-          <v-icon end icon="mdi mdi-google"></v-icon>
-        </v-btn>
-        <v-btn
-          class="text-none mx-5"
-          color="success"
-          variant="outlined"
-          @click="handleCopy"
-        >
-          Copy Text
-          <v-icon end icon="mdi mdi-content-copy"></v-icon>
-        </v-btn>
-        <v-snackbar
-          v-model="snackbar"
-          class="ma-10"
-          variant="tonal"
-          :color="snackbarColor"
-        >
-          <p class="text-center">{{ snackbarText }}</p>
-        </v-snackbar>
-      </v-col>
-    </v-row>
-  </v-parallax>
+            color="success"
+            size="x-large"
+            @click="speakIntro"
+            >Speak</v-btn
+          >
+          <v-btn
+            class="glow-on-hover mx-5"
+            prepend-icon="mdi mdi-record"
+            stacked
+            variant="outlined"
+            color="red"
+            size="x-large"
+            @click="handleRecording"
+            >{{ recBtn }}</v-btn
+          >
+          <div class="mt-15">
+            <v-textarea
+              v-model="transcript"
+              variant="outlined"
+              bg-color="grey-lighten-2"
+              clearable
+              auto-grow
+              class="my-5 mx-15"
+            ></v-textarea>
+            <v-btn class="text-none ma-5" color="blue" @click="handleSearch">
+              Search Google
+              <v-icon end icon="mdi mdi-google"></v-icon>
+            </v-btn>
+            <v-btn
+              class="text-none ma-5"
+              color="white"
+              variant="outlined"
+              @click="handleCopy"
+            >
+              Copy Text
+              <v-icon end icon="mdi mdi-content-copy"></v-icon>
+            </v-btn>
+          </div>
+        </v-col>
+      </v-row>
+      <v-snackbar
+        v-model="snackbar"
+        class="ma-10"
+        variant="tonal"
+        :color="snackbarColor"
+      >
+        <p class="text-center">{{ snackbarText }}</p>
+      </v-snackbar>
+    </v-parallax>
+  </v-container>
 </template>
 
 <script setup>
-const transcript = ref("Press Record To Start");
 const isRecording = ref(false);
 const recBtn = ref("Record");
 const snackbar = ref(false);
 const snackbarText = ref("");
 const snackbarColor = ref("");
+const transcript = ref(
+  "Hi, I'm Ariana. Your Personal Assistant for Seamless Efficiency!",
+);
 let speech;
 
 const speakIntro = () => {
-  const introText =
-    "Hai, I'm Ariana. Your Personal Assistant for Seamless Efficiency.";
+  const introText = transcript.value;
   const synth = window.speechSynthesis;
 
   if (synth.speaking) {
@@ -182,7 +179,7 @@ const handleCopy = () => {
   transition: box-shadow 0.3s ease;
 }
 .glow-on-hover:hover {
-  box-shadow: 0 0 100px #01b5dc;
+  box-shadow: 0 0 100px #02f3fd;
 }
 .outlined-text {
   color: #fff;
@@ -191,10 +188,5 @@ const handleCopy = () => {
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
-}
-.textarea {
-  max-width: 900px;
-  min-height: 50vh;
-  overflow: auto;
 }
 </style>
