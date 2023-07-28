@@ -1,7 +1,7 @@
 <template>
   <v-container class="bg-black">
     <v-app-bar class="pa-2" app color="black" dark>
-      <v-app-bar-nav-icon> </v-app-bar-nav-icon>
+      <v-icon icon="mdi mdi-circle-double"></v-icon>
       <v-app-bar-title>Neo.AI</v-app-bar-title>
       <div class="links">
         <a

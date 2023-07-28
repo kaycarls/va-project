@@ -1,8 +1,13 @@
 export default defineNuxtConfig({
   app: {
     head: {
+      title: "NeoAI",
       link: [
-        { rel: "icon", type: "image/x-icon", href: "~/assets/favicon.ico" },
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "https://kaycarls.github.io/va-project/logo.png",
+        },
       ],
     },
   },
