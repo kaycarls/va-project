@@ -24,7 +24,7 @@
         </v-col>
         <v-col cols="12" md="6" class="mt-15 text-center">
           <v-btn
-            class="glow-on-hover mx-5"
+            class="glow-on-hover ma-5"
             prepend-icon="mdi mdi-play"
             stacked
             variant="outlined"
@@ -34,7 +34,7 @@
             >Speak</v-btn
           >
           <v-btn
-            class="glow-on-hover mx-5"
+            class="glow-on-hover ma-5"
             prepend-icon="mdi mdi-record"
             stacked
             variant="outlined"
@@ -50,7 +50,7 @@
               bg-color="grey-lighten-2"
               clearable
               auto-grow
-              class="my-5 mx-15"
+              class="my-sm-5 mx-sm-15"
             ></v-textarea>
             <v-btn class="text-none ma-5" color="blue" @click="handleSearch">
               Search Google
