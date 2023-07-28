@@ -2,6 +2,7 @@
   <v-app class="bg-black fade-in">
     <NavBar />
     <HeroPage />
+    <ResearchPage />
     <v-parallax
       height="100vh"
       src="https://cdn.dribbble.com/users/1373613/screenshots/5385718/media/53dcc789f5aa17d54d3912f7c2716ccd.gif"
@@ -91,6 +92,7 @@
 <script setup>
 import NavBar from "~/components/NavBar.vue";
 import HeroPage from "~/components/HeroPage.vue";
+import ResearchPage from "~/components/ResearchPage.vue";
 
 const transcript = ref("Press Record To Start");
 const isRecording = ref(false);
