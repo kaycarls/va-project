@@ -1,7 +1,9 @@
 <template>
   <v-container class="bg-black">
     <v-app-bar class="pa-2" app color="black" dark>
-      <v-icon icon="mdi mdi-circle-double"></v-icon>
+      <div class="logo">
+        <img src="~/assets/logo.png" class="logo py-3" />
+      </div>
       <v-app-bar-title>Neo.AI</v-app-bar-title>
       <div class="links">
         <a
@@ -51,6 +53,9 @@ function scrollToSection(id) {
 </script>
 
 <style>
+.logo {
+  height: 100%;
+}
 .custom-app-bar {
   height: 100px;
 }

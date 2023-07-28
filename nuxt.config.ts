@@ -6,7 +6,7 @@ export default defineNuxtConfig({
         {
           rel: "icon",
           type: "image/png",
-          href: "https://kaycarls.github.io/va-project/logo.png",
+          href: "https://kaycarls.github.io/va-project/assets/logo.png",
         },
       ],
     },
