@@ -37,9 +37,8 @@
     </v-row>
   </v-parallax>
   <v-parallax height="100vh" src="" class="bg-black">
-    <v-row class="d-flex align-center fill-height">
-      <v-col cols="12" class="text-center pt-10">
-        <h1>Hello World</h1>
+    <v-row class="d-flex align-center pt-15">
+      <v-col cols="12" class="text-center pt-15">
         <v-btn class="ma-2 text-none" color="error" @click="handleRecording">
           {{ recBtn }}
           <v-icon
@@ -49,14 +48,14 @@
           ></v-icon>
         </v-btn>
       </v-col>
-      <v-col cols="12" class="text-center pt-10">
-        <div class="d-flex justify-center">
+      <v-col cols="12" class="text-center">
+        <div class="d-flex justify-center mt-15">
           <v-textarea
             v-model="transcript"
             variant="outlined"
             clearable
             auto-grow
-            class="textarea ma-5"
+            class="textarea mx-5"
           ></v-textarea>
         </div>
         <v-btn class="text-none mx-5" color="blue" @click="handleSearch">
@@ -194,8 +193,8 @@ const handleCopy = () => {
     1px 1px 0 #000;
 }
 .textarea {
-  max-width: 50vw;
-  max-height: 50vh;
+  max-width: 900px;
+  min-height: 50vh;
   overflow: auto;
 }
 </style>
