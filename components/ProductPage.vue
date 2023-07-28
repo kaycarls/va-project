@@ -95,7 +95,7 @@ let speech;
 
 const speakIntro = () => {
   const introText =
-    "Hai, I'm Ariana. Your Personal Assistant for Seamless Efficiency. Allow me to guide u through this process. Please click here to proceed";
+    "Hai, I'm Ariana. Your Personal Assistant for Seamless Efficiency.";
   const synth = window.speechSynthesis;
 
   if (synth.speaking) {
