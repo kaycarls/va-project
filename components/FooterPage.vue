@@ -39,8 +39,8 @@
 <script setup>
 const footer = [
   {
-    url: "https://www.twitter.com/",
-    title: "Twitter",
+    url: "https://www.hotmail.com/",
+    title: "Email",
   },
   {
     url: "https://www.instagram.com/",
