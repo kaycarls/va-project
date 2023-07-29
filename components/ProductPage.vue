@@ -142,7 +142,7 @@ const initSpeechRecognition = () => {
     };
   } else {
     snackbarText.value =
-      "Speech Recognition is not available in this browser. Please use a different browser.";
+      "A.I is not available in this browser. Please use a different browser.";
     snackbarColor.value = "error";
     snackbar.value = true;
   }
