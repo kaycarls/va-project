@@ -52,12 +52,15 @@
               auto-grow
               class="my-sm-5 mx-sm-15"
             ></v-textarea>
-            <v-btn class="text-none ma-5" color="blue" @click="handleSearch">
+          </div>
+          <div class="d-sm-flex mx-10">
+            <v-spacer></v-spacer>
+            <v-btn class="text-none ma-3" color="blue" @click="handleSearch">
               Search
               <v-icon end icon="mdi mdi-google"></v-icon>
             </v-btn>
             <v-btn
-              class="text-none ma-5"
+              class="text-none ma-3"
               color="white"
               variant="outlined"
               @click="handleCopy"
